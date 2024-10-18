@@ -1,0 +1,56 @@
+    <!-- Nội dung chính của trang -->
+    <main>
+        <!-- Phần bài viết hoặc nội dung chính -->
+        <article>
+            <h2>Tiêu đề bài viết</h2>
+            <p>Đoạn văn bản nội dung đầu tiên.</p>
+            <p>Đoạn văn bản nội dung thứ hai.</p>
+        </article>
+
+        <!-- Phần phụ, ví dụ thanh bên hoặc nội dung liên quan -->
+        <aside>
+            <h3>Nội dung phụ</h3>
+            <p>Thông tin hoặc liên kết phụ trợ.</p>
+        </aside>
+    </main>
+
+    <!-- Phần nội dung tách biệt thành các phần (sections) -->
+    <section>
+        <h2>Tiêu đề phần</h2>
+        <p>Nội dung trong phần này.</p>
+    </section>
+
+    <!-- Phần chân trang (footer) -->
+    <footer>
+        <p>Bản quyền &copy; 2024</p>
+        <p><a href="mailto:info@example.com">Liên hệ</a></p>
+    </footer>
+
+
+Màu sữa trong CSS thường được gọi là "off-white" hoặc "ivory" – một màu trắng nhạt có tông hơi ấm. Đây là một tông màu rất gần với trắng nhưng có chút sắc thái vàng hoặc kem, giống như màu của sữa.
+
+Một số mã màu thường được sử dụng để biểu thị màu sữa:
+Ivory: #FFFFF0
+Beige: #F5F5DC
+AntiqueWhite: #FAEBD7
+WhiteSmoke: #F5F5F5
+
+    Màu đen hoặc xám đậm: Giúp văn bản nổi bật và dễ đọc.
+
+Màu đen: #000000
+Màu xám đậm: #333333, #4D4D4D
+Màu nâu hoặc nâu đậm: Mang đến cảm giác ấm áp và cổ điển, phù hợp với tông màu sữa.
+
+Màu nâu đậm: #4B3621, #5C4033
+Màu nâu nhạt: #8B4513, #7B3F00
+Màu xanh navy hoặc xanh đậm: Mang lại sự tương phản tốt và có cảm giác thanh lịch.
+
+Xanh navy: #001F3F
+Xanh đậm: #2C3E50
+Màu xám xanh hoặc xanh khói: Tạo sự hài hòa với nền sữa, nhẹ nhàng và hiện đại.
+
+Xám xanh: #708090, #556B2F
+Màu đỏ rượu hoặc đỏ gạch: Tạo điểm nhấn, phù hợp cho tiêu đề hoặc phần nhấn mạnh.
+
+Đỏ rượu: #8B0000
+Đỏ gạch: #A52A2A
