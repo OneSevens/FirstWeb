@@ -2,22 +2,37 @@
     header nav {
         margin-right: 20px;
     }
-
     header .brand .namelogo {
         font-size: 15px;
         font-weight: 550;
     }
-
     header nav ul li a {
         font-weight: bold;
         font-size: 10px; /* Kích thước chữ */
         user-select: none;
         padding: 0 15px;
     }
-    
     main .slide .text p {
         color: white;
         font-size: 30px;
         padding: 10px 0;
+    }
+}
+@media (max-width: 450px) {
+    header {
+        padding: 0;
+    }
+    header nav {
+        margin-right: 0px;
+    }
+    header .brand .namelogo {
+        font-size: 12px;
+        font-weight: 550;
+    }
+    header nav ul li a {
+        font-weight: bold;
+        font-size: 9px; /* Kích thước chữ */
+        user-select: none;
+        padding: 0 10px;
     }
 }
