@@ -110,17 +110,14 @@ main {
     height: 2000px;
     /* background-color: #333  ; */
 }
-
 main .slide {
     position: relative;
     background-color: #333;
 }
-
 main .slide img {
     width: 100%;
     opacity: 0.6;
 }
-
 main .slide .text {
     position: absolute;
     top: 50%; 
@@ -129,8 +126,8 @@ main .slide .text {
     text-align: center;
     z-index: 1; 
     width: 100%;
+    padding-top: calc(var(--header-height)/2);
 }
-
 main .slide .text p {
     color: white;
     font-size: 50px;
