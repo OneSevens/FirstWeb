@@ -35,7 +35,8 @@ Beige: #F5F5DC
 AntiqueWhite: #FAEBD7
 WhiteSmoke: #F5F5F5
 
-    Màu đen hoặc xám đậm: Giúp văn bản nổi bật và dễ đọc.
+
+Màu đen hoặc xám đậm: Giúp văn bản nổi bật và dễ đọc.
 
 Màu đen: #000000
 Màu xám đậm: #333333, #4D4D4D

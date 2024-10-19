@@ -1,7 +1,9 @@
 :root {
     --color-milk1: #fffff0;
-    --color99-milk1: rgba(255,255,240,0.99);
+    --color99-milk1: rgba(255,255,240,0.95);
     --color-milk2: #F5F5DC;
+    --color-milk3: #FAEBD7;
+    --color-milk4: #F5F5F5;
     --color-NauDam: #4B3621;
     --color-DoRuou: #8B0000;
     --color-XanhNavy: #001F3F;
@@ -12,6 +14,13 @@
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+.raleway-bold {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
   
 header {
@@ -78,10 +87,10 @@ header nav ul li a {
     justify-content: center;
     height: var(--header-height);
     color: var(--color-NauDam);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 550;
-    text-decoration: none; /* Bỏ gạch chân liên kết */
-    font-size: 16px; /* Kích thước chữ */
+    /* font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550; */
+    text-decoration: none;
+    font-size: 12   px;
     user-select: none;
     padding: 0 30px;
 }
@@ -95,7 +104,6 @@ header nav ul li:hover a{
 }
 
 main {
-    padding-top: var(--header-height);
     width: 100%;
     height: 2000px;
     /* background-color: #333  ; */
