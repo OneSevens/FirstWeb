@@ -1,23 +1,11 @@
-@media (max-width: 700px) {
+/* Điện thoại lớn */
+@media (min-width: 576px) and (max-width: 768px) {
     header nav {
         margin-right: 20px;
     }
-    header .brand .namelogo {
-        font-size: 15px;
-        font-weight: 550;
-    }
-    header nav ul li a {
-        font-size: 12px; /* Kích thước chữ */
-        user-select: none;
-        padding: 0 15px;
-    }
-    main .slide .text p {
-        color: white;
-        font-size: 30px;
-        padding: 10px 0;
-    }
 }
-@media (max-width: 450px) {
+/* Điện thoại nhỏ */
+@media (max-width: 576px) {
     header {
         padding: 0;
     }
@@ -30,8 +18,16 @@
     }
     header nav ul li a {
         font-weight: bold;
-        font-size: 9px; /* Kích thước chữ */
+        font-size: 9px;
         user-select: none;
         padding: 0 10px;
+    }
+    main .slide .text p {
+        font-size: 30px;
+        padding: 10px 0;
+    }
+    footer .contact ul li {
+        padding: 4px 0;
+        padding-left: 8px;
     }
 }
