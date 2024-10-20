@@ -12,13 +12,11 @@
     --color-DoTuoi: #e74c3c;
     --header-height: 60px;
 }
-
 .pacifico-regular {
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: normal;
 }
-
 .raleway-bold {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
@@ -106,12 +104,29 @@ header nav ul li:hover a {
 }
 
 /* START: MAIN */
+main::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/background1.webp);
+    background-size: contain;
+    background-position: top;
+    background-attachment: fixed;
+    opacity: 0.6;
+    z-index: -1;
+}
 main {
     position: relative;
     width: 100%;
-    height: 2000px;
+    height: 100%;
 }
+/* SLIDER */
 main .slider {
+    background-color: black;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -125,9 +140,8 @@ main .slide {
     display: grid;
     align-items: end;
     min-width: 100%;
-    background-color: black;
     opacity: 0;
-    transition: opacity 2.5s ease;
+    transition: opacity 2.5s ease-out;
 }
 main .slide:not(:first-child) {
     margin-top: -100%;
@@ -156,15 +170,10 @@ main .slide .text p {
     font-size: 50px;
     padding: 20px 0;
 }
+/* PRODUCT */
 
-main .background {
-    position: absolute;
-    background-image: url(../img/background1.webp);
-    background-size: contain;
-    background-position: top;
-    background-attachment: fixed;
-    opacity: 0.5;
-    width: 100%;
+main .product {
+    display: block;
     height: 1000px;
 }
 
@@ -173,9 +182,11 @@ footer {
     display: grid;
     grid-template-columns: auto 1fr;
     background-color: var(--color-milk3);
-    padding: 10px 0 ;
+    z-index: 1000;
 }
-
+footer .contact {
+    padding: 10px 0;
+}
 footer .contact ul {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
@@ -200,4 +211,13 @@ footer .contact a {
 
 footer .contact a:hover {
     color: var(--color-DoTuoi);
+}
+/*  */
+#before_footer, #before_product {
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: var(--header-height);
+    margin-top: calc(-1*var(--header-height));
+    visibility: hidden;
 }
