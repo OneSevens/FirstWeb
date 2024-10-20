@@ -42,7 +42,7 @@ header {
 
 header .brand {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, auto) 8px;
     text-decoration: none;
     user-select: none;
 }
