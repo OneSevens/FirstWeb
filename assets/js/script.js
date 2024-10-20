@@ -25,3 +25,25 @@ anchorLinks.forEach(function(link) {
         }
     });
 });
+
+const slides = document.querySelectorAll('.slide'); // Lấy tất cả các slide
+let currentSlide = 0; // Chỉ số của slide hiện tại
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active'); // Gỡ bỏ lớp active
+        if (i === index) {
+            slide.classList.add('active'); // Thêm lớp active cho slide hiện tại
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length; // Chuyển đến slide tiếp theo
+    showSlide(currentSlide);
+}
+
+// Hiện slide đầu tiên
+showSlide(currentSlide);
+// Chuyển đổi mỗi 2 giây
+setInterval(nextSlide, 5000);
