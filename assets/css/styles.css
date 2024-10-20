@@ -7,6 +7,7 @@
     --color-NauDam: #4B3621;
     --color-DoRuou: #8B0000;
     --color-XanhNavy: #001F3F;
+    --color-XanhDam: #0055ab;
     --color-XamXanh: #708090;
     --color-DoTuoi: #e74c3c;
     --header-height: 60px;
@@ -194,7 +195,7 @@ footer .contact .icon {
 
 footer .contact a {
     text-decoration: none;
-    color: var(--color-XanhNavy);
+    color: var(--color-XanhDam);
 }
 
 footer .contact a:hover {

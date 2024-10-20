@@ -26,6 +26,7 @@ anchorLinks.forEach(function(link) {
     });
 });
 
+// Hiệu ứng chuyển đổi các slide
 const slides = document.querySelectorAll('.slide'); // Lấy tất cả các slide
 let currentSlide = 0; // Chỉ số của slide hiện tại
 
