@@ -26,6 +26,11 @@
         font-size: 30px;
         padding: 10px 0;
     }
+
+    main .product .intro {
+        font-size: 20px;
+    }
+
     footer .contact ul li {
         padding: 4px 0;
         padding-left: 8px;
