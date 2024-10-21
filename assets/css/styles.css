@@ -203,9 +203,9 @@ main .product .intro::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/ground2.webp);
+    background-image: url(../img/ground3.webp);
     background-position: top;
-    background-size: auto 150vw;
+    background-size: 100% auto;
     background-attachment: fixed;
     z-index: -1;
 }
