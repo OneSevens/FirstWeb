@@ -205,7 +205,7 @@ main .product .intro::before {
     height: 100%;
     background-image: url(../img/ground2.webp);
     background-position: top;
-    background-size: auto;
+    background-size: auto 150vw;
     background-attachment: fixed;
     z-index: -1;
 }
