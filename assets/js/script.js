@@ -1,50 +1,40 @@
-// Lấy tất cả các thẻ <a> có href bắt đầu bằng #
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
+// Handle smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const scrollOptions = {
+            behavior: 'smooth'
+        };
 
-anchorLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-        event.preventDefault(); // Ngăn chặn hành vi mặc định
-
-        const targetId = this.getAttribute('href').substring(1); // Lấy id của phần tử đích
-
-        if (targetId === "") {
-            // Nếu href="#" thì cuộn lên đầu trang
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Hiệu ứng cuộn mượt
-            });
+        if (!targetId) {
+            scrollOptions.top = 0;
         } else {
-            // Cuộn đến phần tử có id tương ứng
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop, // Lấy vị trí của phần tử đích
-                    behavior: 'smooth' // Hiệu ứng cuộn mượt
-                });
+            const target = document.getElementById(targetId);
+            if (target) {
+                scrollOptions.top = target.offsetTop;
             }
         }
+        window.scrollTo(scrollOptions);
     });
 });
 
-// Hiệu ứng chuyển đổi các slide
-const slides = document.querySelectorAll('.slide'); // Lấy tất cả các slide
-let currentSlide = 0; // Chỉ số của slide hiện tại
+// Handle slideshow functionality
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
-function showSlide(index) {
+const showSlide = index => {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active'); // Gỡ bỏ lớp active
-        if (i === index) {
-            slide.classList.add('active'); // Thêm lớp active cho slide hiện tại
-        }
+        slide.classList.toggle('active', i === index);
     });
-}
+};
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length; // Chuyển đến slide tiếp theo
+const nextSlide = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
-}
+};
 
-// Hiện slide đầu tiên
+// Initialize slideshow
 showSlide(currentSlide);
-// Chuyển đổi mỗi 2 giây
-setInterval(nextSlide, 5000);
+const SLIDE_INTERVAL = 5000;
+setInterval(nextSlide, SLIDE_INTERVAL);
