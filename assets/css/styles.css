@@ -282,3 +282,20 @@ footer .contact a:hover img {
     margin-top: calc(-1 * var(--header-height));
     visibility: hidden;
 }
+
+.goodbye {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.goodbye img {
+    max-width: 200px;  /* Adjust this value based on desired size */
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.goodbye img:hover {
+    transform: scale(1.05);
+}

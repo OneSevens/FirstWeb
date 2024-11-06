@@ -39,4 +39,12 @@
     footer .contact ul li {
         padding: 4px 0 4px 8px;
     }
+
+    footer {
+        grid-template-columns: 1fr;  /* Change to single column */
+    }
+    
+    .goodbye {
+        grid-row: 2;  /* Place goodbye section below contact */
+    }
 }
