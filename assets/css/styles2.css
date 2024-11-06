@@ -1,38 +1,42 @@
-/* Điện thoại lớn */
+/* Large phones */
 @media (min-width: 576px) and (max-width: 768px) {
     header nav {
         margin-right: 20px;
     }
 }
-/* Điện thoại nhỏ */
+
+/* Small phones */
 @media (max-width: 576px) {
     header {
         padding: 0;
     }
+    
     header nav {
         margin-right: 4px;
     }
+    
     header .brand .namelogo {
         font-size: 12px;
         font-weight: 550;
     }
+    
     header nav ul li a {
-        font-weight: bold;
-        font-size: 9px;
-        user-select: none;
         padding: 0 10px;
+        font-size: 9px;
+        font-weight: bold;
+        user-select: none;
     }
+    
     main .slide .text p {
         font-size: 30px;
         padding: 10px 0;
     }
-
+    
     main .product .intro {
         font-size: 20px;
     }
-
+    
     footer .contact ul li {
-        padding: 4px 0;
-        padding-left: 8px;
+        padding: 4px 0 4px 8px;
     }
 }
