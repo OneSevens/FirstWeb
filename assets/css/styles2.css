@@ -15,6 +15,7 @@
     }
     .form_contact {
         margin: 0 auto;
+        margin-bottom: 20px;
     }
 }
 
@@ -69,6 +70,8 @@
     }
 
     .form_contact {
+        width: 80%;
         margin: 0 auto;
+        margin-bottom: 20px;
     }
 }
