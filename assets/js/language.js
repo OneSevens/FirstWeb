@@ -72,25 +72,22 @@ function updateMetaTags(language) {
 // Initialize language selector
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('languageSelector');
+    const flagImage = languageSelector.querySelector('img');
     
     // Set initial language from localStorage or browser preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
     const browserLanguage = navigator.language.split('-')[0];
     const initialLanguage = savedLanguage || (browserLanguage === 'en' ? 'en' : 'vi');
     
-    languageSelector.value = initialLanguage;
+    // Update flag image to match saved language
+    flagImage.src = `./assets/img/${initialLanguage}-flag.png`;
+    flagImage.dataset.lang = initialLanguage;
+    
+    // Update html class and content
+    document.documentElement.className = `lang-${initialLanguage}`;
     setLanguage(initialLanguage);
     
-    // Add change event listener
-    languageSelector.addEventListener('change', (e) => {
-        setLanguage(e.target.value);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const languageSelector = document.getElementById('languageSelector');
-    const flagImage = languageSelector.querySelector('img');
-    
+    // Add click event listener for language switching
     languageSelector.addEventListener('click', function() {
         const currentLang = flagImage.dataset.lang;
         const newLang = currentLang === 'vi' ? 'en' : 'vi';
@@ -106,6 +103,3 @@ document.addEventListener('DOMContentLoaded', function() {
         setLanguage(newLang);
     });
 });
-
-// Remove or comment out the duplicate event listeners and updateContent function
-// ... rest of the code ... 
