@@ -1,0 +1,333 @@
+:root {
+    --color-milk1: #fffff0;
+    --color99-milk1: rgba(255,255,240,0.95);
+    --color-milk2: #F5F5DC;
+    --color-milk3: #FAEBD7;
+    --color-milk4: #F5F5F5;
+    --color-NauDam: #4B3621;
+    --color-DoRuou: #8B0000;
+    --color-XanhNavy: #001F3F;
+    --color-XanhDam: #0055ab;
+    --color-XamXanh: #708090;
+    --color-DoTuoi: #e74c3c;
+    --header-height: 60px;
+}
+
+/* Font families */
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.raleway-bold {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.eb-garamond-bold {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--color99-milk1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.brand {
+    display: grid;
+    grid-template-columns: repeat(2, auto) 8px;
+    text-decoration: none;
+}
+
+.brand:hover {
+    opacity: 0.7;
+}
+
+.brand .logo,
+.brand .namelogo {
+    height: var(--header-height);
+}
+
+.brand .logo {
+    vertical-align: middle;
+    user-select: none;
+}
+
+.brand .namelogo {
+    display: grid;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 550;
+    color: var(--color-XanhNavy);
+}
+
+header nav {
+    margin-right: 20px;
+    justify-self: end;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-flow: column;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+nav ul li a {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-height);
+    color: var(--color-NauDam);
+    text-decoration: none;
+    font-size: 12px;
+    user-select: none;
+    padding: 0 30px;
+    white-space: nowrap;
+}
+
+nav ul li:hover {
+    background-color: var(--color-milk2);
+}
+
+nav ul li:hover a {
+    color: var(--color-DoRuou);
+}
+
+/* Main content */
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../img/one-sevens-background-1.webp) top/contain fixed;
+    opacity: 0.6;
+    z-index: -2;
+}
+
+/* Slider */
+.slider {
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slides {
+    position: relative;
+    display: grid;
+    width: 100%;
+}
+
+.slide {
+    display: grid;
+    align-items: end;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 2.5s ease-out;
+}
+
+.slide:not(:first-child) {
+    margin-top: -100%;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.slide .text {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 100%;
+    padding-top: var(--header-height);
+}
+
+.slide .text p {
+    color: var(--color-milk1);
+    font-size: 50px;
+    padding: 20px 0;
+}
+
+/* Product section */
+.product {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 1000px;
+}
+
+.product .intro,
+.product .outro {
+    background-color: var(--color-milk2);
+    color: var(--color-NauDam);
+}
+
+.product .intro {
+    padding: 40px;
+    font-size: 30px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.product .outro {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: var(--color-milk3);
+    z-index: 1000;
+}
+
+.contact {
+    padding: 10px 0;
+}
+
+.contact ul {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.contact ul li {
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px 0 8px 20px;
+    color: var(--color-NauDam);
+}
+
+.contact ul .pzalo {
+    display: flex;
+}
+
+.contact ul .pzalo a {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+.contact img {
+    height: 16px;
+}
+
+.contact .icon {
+    justify-self: center;
+}
+
+.contact a {
+    text-decoration: none;
+    color: var(--color-XanhDam);
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--color-DoTuoi);
+}
+
+.contact a:hover img {
+    opacity: 0.7;
+}
+
+#before_footer,
+#before_product {
+    position: absolute;
+    width: 10px;
+    height: var(--header-height);
+    margin-top: calc(-1 * var(--header-height));
+    visibility: hidden;
+}
+
+/* Goodbye section */
+.goodbye {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.goodbye img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.goodbye img:hover {
+    transform: scale(1.05);
+}
+
+/* Language switcher */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    user-select: none;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    height: var(--header-height);
+}
+
+.language-button:hover {
+    opacity: 0.7;
+    background-color: var(--color-milk2);
+}
+
+.language-button img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}

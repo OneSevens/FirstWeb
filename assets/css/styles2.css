@@ -1,0 +1,64 @@
+/* Large phones */
+@media (min-width: 576px) and (max-width: 768px) {
+    header nav {
+        margin-right: 20px;
+    }
+    header .brand .namelogo {
+        font-size: 16px;
+        font-weight: 550;
+    }
+    header nav ul li a {
+        padding: 0 20px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+    header {
+        padding: 0;
+    }
+    
+    header nav {
+        margin-right: 4px;
+    }
+    
+    header .brand .namelogo {
+        font-size: 12px;
+        font-weight: 550;
+    }
+    
+    header nav ul li a {
+        padding: 0 10px;
+        font-size: 9px;
+        font-weight: bold;
+        user-select: none;
+    }
+    
+    .language-button,
+    header nav ul li a {
+        padding: 0 10px;
+    }
+    
+    main {
+        .slide .text p {
+            font-size: 30px;
+            padding: 10px 0;
+        }
+        
+        .product .intro {
+            font-size: 20px;
+        }
+    }
+    
+    footer {
+        grid-template-columns: 1fr;
+        
+        .contact ul li {
+            padding: 4px 0 4px 8px;
+        }
+    }
+    
+    .goodbye {
+        grid-row: 2;
+    }
+}
