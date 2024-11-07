@@ -14,7 +14,13 @@ const translations = {
         "contact.address": "Address: Duc Hoa, Long An.",
         "contact.phone": "Phone:",
         "contact.mail": "Mail:",
-        "contact.facebook": "Facebook:"
+        "contact.facebook": "Facebook:",
+        "form_contact.title": "Contact Us",
+        "form_contact.name_placeholder": "Full Name",
+        "form_contact.phone_placeholder": "Phone Number",
+        "form_contact.email_placeholder": "Email",
+        "form_contact.message_placeholder": "Message",
+        "form_contact.submit_button": "Submit"
     },
     vi: {
         "nav.home": "TRANG CHỦ",
@@ -31,22 +37,31 @@ const translations = {
         "contact.address": "Địa chỉ: Đức Hòa, Long An.",
         "contact.phone": "Điện thoại:",
         "contact.mail": "Mail:",
-        "contact.facebook": "Facebook:"
+        "contact.facebook": "Facebook:",
+        "form_contact.title": "Liên Hệ Chúng Tôi",
+        "form_contact.name_placeholder": "Họ và tên",
+        "form_contact.phone_placeholder": "Số điện thoại",
+        "form_contact.email_placeholder": "Email",
+        "form_contact.message_placeholder": "Nội dung",
+        "form_contact.submit_button": "Gửi"
     }
 };
 
 function setLanguage(language) {
-    const elements = document.querySelectorAll('[data-lang-key]');
-    elements.forEach(element => {
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
         const key = element.getAttribute('data-lang-key');
         if (translations[language] && translations[language][key]) {
-            element.textContent = translations[language][key];
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[language][key];
+            } else {
+                element.textContent = translations[language][key];
+            }
         }
     });
-    
+
     // Save language preference
     localStorage.setItem('preferredLanguage', language);
-    
+
     // Update meta tags for SEO
     updateMetaTags(language);
 }
@@ -63,42 +78,42 @@ function updateMetaTags(language) {
         }
     };
 
-    document.title = metaTags[language].title;
-    document.querySelector('meta[name="description"]').setAttribute('content', metaTags[language].description);
-    document.querySelector('meta[property="og:title"]').setAttribute('content', metaTags[language].title);
-    document.querySelector('meta[property="og:description"]').setAttribute('content', metaTags[language].description);
+    const { title, description } = metaTags[language];
+    document.title = title;
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+    document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
 }
 
 // Initialize language selector
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('languageSelector');
     const flagImage = languageSelector.querySelector('img');
-    
+
     // Set initial language from localStorage or browser preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
     const browserLanguage = navigator.language.split('-')[0];
     const initialLanguage = savedLanguage || (browserLanguage === 'en' ? 'en' : 'vi');
-    
+
     // Update flag image to match saved language
     flagImage.src = `./assets/img/${initialLanguage}-flag.png`;
     flagImage.dataset.lang = initialLanguage;
-    
+
     // Update html class and content
     document.documentElement.className = `lang-${initialLanguage}`;
     setLanguage(initialLanguage);
-    
+
     // Add click event listener for language switching
-    languageSelector.addEventListener('click', function() {
-        const currentLang = flagImage.dataset.lang;
-        const newLang = currentLang === 'vi' ? 'en' : 'vi';
-        
+    languageSelector.addEventListener('click', () => {
+        const newLang = flagImage.dataset.lang === 'vi' ? 'en' : 'vi';
+
         // Update flag image
         flagImage.src = `./assets/img/${newLang}-flag.png`;
         flagImage.dataset.lang = newLang;
-        
+
         // Update html class
         document.documentElement.className = `lang-${newLang}`;
-        
+
         // Update content based on language
         setLanguage(newLang);
     });

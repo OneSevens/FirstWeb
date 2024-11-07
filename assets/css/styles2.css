@@ -10,6 +10,12 @@
     header nav ul li a {
         padding: 0 20px;
     }
+    footer {
+        grid-template-columns: 1fr;
+    }
+    .form_contact {
+        margin: 0 auto;
+    }
 }
 
 /* Small phones */
@@ -60,5 +66,9 @@
     
     .goodbye {
         grid-row: 2;
+    }
+
+    .form_contact {
+        margin: 0 auto;
     }
 }

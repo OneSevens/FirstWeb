@@ -38,3 +38,22 @@ const nextSlide = () => {
 showSlide(currentSlide);
 const SLIDE_INTERVAL = 5000;
 setInterval(nextSlide, SLIDE_INTERVAL);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form_contact form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && message) {
+            alert('Form submitted successfully!');
+            // Here you can add code to send form data to the server
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+});
