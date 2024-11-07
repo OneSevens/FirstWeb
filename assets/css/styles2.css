@@ -3,6 +3,13 @@
     header nav {
         margin-right: 20px;
     }
+    header .brand .namelogo {
+        font-size: 16px;
+        font-weight: 550;
+    }
+    header nav ul li a {
+        padding: 0 20px;
+    }
 }
 
 /* Small phones */
@@ -27,24 +34,31 @@
         user-select: none;
     }
     
-    main .slide .text p {
-        font-size: 30px;
-        padding: 10px 0;
+    .language-button,
+    header nav ul li a {
+        padding: 0 10px;
     }
     
-    main .product .intro {
-        font-size: 20px;
+    main {
+        .slide .text p {
+            font-size: 30px;
+            padding: 10px 0;
+        }
+        
+        .product .intro {
+            font-size: 20px;
+        }
     }
     
-    footer .contact ul li {
-        padding: 4px 0 4px 8px;
-    }
-
     footer {
-        grid-template-columns: 1fr;  /* Change to single column */
+        grid-template-columns: 1fr;
+        
+        .contact ul li {
+            padding: 4px 0 4px 8px;
+        }
     }
     
     .goodbye {
-        grid-row: 2;  /* Place goodbye section below contact */
+        grid-row: 2;
     }
 }
