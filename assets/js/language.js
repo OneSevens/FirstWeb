@@ -17,10 +17,13 @@ const translations = {
         "contact.facebook": "Facebook:",
         "form_contact.title": "Contact Us",
         "form_contact.name_placeholder": "Full Name",
-        "form_contact.phone_placeholder": "Phone Number",
+        "form_contact.phone_placeholder": "Phone Number", 
         "form_contact.email_placeholder": "Email",
         "form_contact.message_placeholder": "Message",
-        "form_contact.submit_button": "Submit"
+        "form_contact.submit_button": "Submit",
+        "form_contact.name_required": "Please enter your name.",
+        "form_contact.contact_required": "Please provide either a phone number or email address.",
+        "form_contact.success": "Thank you! We will contact you as soon as possible."
     },
     vi: {
         "nav.home": "TRANG CHỦ",
@@ -43,19 +46,32 @@ const translations = {
         "form_contact.phone_placeholder": "Số điện thoại",
         "form_contact.email_placeholder": "Email",
         "form_contact.message_placeholder": "Nội dung",
-        "form_contact.submit_button": "Gửi"
+        "form_contact.submit_button": "Gửi",
+        "form_contact.name_required": "Vui lòng nhập tên của bạn.",
+        "form_contact.contact_required": "Vui lòng cung cấp số điện thoại hoặc email.",
+        "form_contact.success": "Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất có thể."
     }
 };
 
 function setLanguage(language) {
+    if (!translations[language]) {
+        console.error(`Language '${language}' not supported`);
+        return;
+    }
+
     document.querySelectorAll('[data-lang-key]').forEach(element => {
         const key = element.getAttribute('data-lang-key');
-        if (translations[language] && translations[language][key]) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translations[language][key];
-            } else {
-                element.textContent = translations[language][key];
-            }
+        const translation = translations[language][key];
+        
+        if (!translation) {
+            console.warn(`Translation missing for key: ${key} in language: ${language}`);
+            return;
+        }
+
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translation;
+        } else {
+            element.textContent = translation;
         }
     });
 
@@ -67,6 +83,11 @@ function setLanguage(language) {
 }
 
 function updateMetaTags(language) {
+    if (!translations[language]) {
+        console.error(`Language '${language}' not supported`);
+        return;
+    }
+
     const metaTags = {
         en: {
             title: "One Sevens Yogurt - High Quality Fresh Yogurt in Duc Hoa, Long An",
@@ -79,16 +100,31 @@ function updateMetaTags(language) {
     };
 
     const { title, description } = metaTags[language];
+    
     document.title = title;
-    document.querySelector('meta[name="description"]').setAttribute('content', description);
-    document.querySelector('meta[property="og:title"]').setAttribute('content', title);
-    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+
+    if (metaDescription) metaDescription.setAttribute('content', description);
+    if (ogTitle) ogTitle.setAttribute('content', title);
+    if (ogDescription) ogDescription.setAttribute('content', description);
 }
 
 // Initialize language selector
 document.addEventListener('DOMContentLoaded', () => {
     const languageSelector = document.getElementById('languageSelector');
+    if (!languageSelector) {
+        console.error('Language selector element not found');
+        return;
+    }
+
     const flagImage = languageSelector.querySelector('img');
+    if (!flagImage) {
+        console.error('Flag image element not found');
+        return;
+    }
 
     // Set initial language from localStorage or browser preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
@@ -105,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add click event listener for language switching
     languageSelector.addEventListener('click', () => {
-        const newLang = flagImage.dataset.lang === 'vi' ? 'en' : 'vi';
+        const currentLang = flagImage.dataset.lang;
+        const newLang = currentLang === 'vi' ? 'en' : 'vi';
 
         // Update flag image
         flagImage.src = `./assets/img/${newLang}-flag.png`;
@@ -116,5 +153,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update content based on language
         setLanguage(newLang);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form_contact form');
+    if (!form) {
+        console.error('Contact form not found');
+        return;
+    }
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name')?.value.trim() || '';
+        const phone = document.getElementById('phone')?.value.trim() || '';
+        const email = document.getElementById('email')?.value.trim() || '';
+        const message = document.getElementById('message')?.value.trim() || '';
+        
+        const currentLang = document.documentElement.className.includes('lang-en') ? 'en' : 'vi';
+        
+        if (!name) {
+            alert(translations[currentLang]['form_contact.name_required']);
+            return;
+        }
+        
+        if (!phone && !email) {
+            alert(translations[currentLang]['form_contact.contact_required']);
+            return;
+        }
+        
+        alert(translations[currentLang]['form_contact.success']);
     });
 });
