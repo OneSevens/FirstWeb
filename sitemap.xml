@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-      xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
   <loc>https://one7s.com/</loc>
-  <lastmod>2023-10-26T12:00:00+00:00</lastmod>
+  <lastmod>2024-03-19T12:00:00+00:00</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
 <url>
-  <loc>https://one7s.com/about</loc>
-  <lastmod>2023-10-26T12:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://one7s.com/contact</loc>
-  <lastmod>2023-10-26T12:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.6</priority>
+   <loc>https://one7s.com/assets/img/one-sevens-logo.jpg</loc>
+   <image:image>
+      <image:loc>https://one7s.com/assets/img/one-sevens-logo.jpg</image:loc>
+      <image:title>One Sevens Logo - Vietnam</image:title>
+      <image:caption>Logo for One Sevens</image:caption>
+   </image:image>
 </url>
 
 </urlset>
