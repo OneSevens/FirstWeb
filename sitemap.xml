@@ -6,20 +6,21 @@
     <url>
         <loc>https://one7s.com/</loc>
         <lastmod>2024-03-19T12:00:00+00:00</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <!-- Image URL with metadata -->
+    <!-- Image URL -->
     <url>
         <loc>https://one7s.com/assets/img/one-sevens-logo.jpg</loc>
         <lastmod>2024-03-19T12:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.6</priority>
         <image:image>
             <image:loc>https://one7s.com/assets/img/one-sevens-logo.jpg</image:loc>
             <image:title>One Sevens Logo - Vietnam</image:title>
             <image:caption>Logo for One Sevens, a leading company in Vietnam</image:caption>
+            <image:license>https://one7s.com/assets/img/license</image:license>
         </image:image>
     </url>
 
